@@ -1,3 +1,40 @@
 <%- include("partials/header.ejs") -%>
-    <h1>Home</h1>
+    <div>
+        <form
+        action="/flight"
+        method="POST"
+        >
+            <label for="source">Source:</label>
+            <input
+                type="text"
+                id="source"
+                name="source"
+                required
+                autocomplete="off"
+            />
+
+            <label for="destination">Destination:</label>
+            <input
+                type="text"
+                id="destination"
+                name="destination"
+                required
+                autocomplete="off"
+            />
+
+            <input type="hidden" name="frontEnd" value="Y">
+            
+            <button type="submit">Find Flight Price</button>
+        </form>
+    </div>
+
+    <div>
+        <%  if(data!==null){ %>
+            <% data.forEach(ele=>{ %>
+                <div class="card" style="background-color:#FFC0CB;">
+                    <p><%= ele.name %>: <%= ele.price %></p>
+                </div>
+            <% }); %>
+        <% } %>
+    </div>
 <%- include("partials/footer.ejs") -%>

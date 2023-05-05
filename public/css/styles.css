@@ -16,3 +16,10 @@ html {
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
+
+.card {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+}
