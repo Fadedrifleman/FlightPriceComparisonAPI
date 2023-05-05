@@ -1,5 +1,7 @@
 ## Flight Price Calculator
 
+Hosted link: https://flightprice-9nog.onrender.com
+
 This is a web application built with Node.js and Express.js that calculates flight prices between two locations.
 
 ### Installation
