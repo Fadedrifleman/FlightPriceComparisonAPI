@@ -21,7 +21,7 @@ export const getPrices = async (req, res) => {
 			from: sourceIATA,
 			to: destinationIATA,
 			data: new Date().toISOString().slice(0, 10),
-			adult: '1',
+			adult: 1,
 			type: 'economy',
 			currency: 'INR',
 		});
