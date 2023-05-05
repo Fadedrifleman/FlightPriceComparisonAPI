@@ -1,40 +1,147 @@
 <%- include("partials/header.ejs") -%>
-    <div>
-        <form
-        action="/flight"
-        method="POST"
-        >
-            <label for="source">Source:</label>
-            <input
-                type="text"
-                id="source"
-                name="source"
-                required
-                autocomplete="off"
-            />
+<div>
+	<form
+		action="/flight"
+		method="POST"
+	>
+		<label for="source">Source:</label>
+		<select
+			id="source"
+			name="source"
+			required
+		>
+			<option value="">Select a source</option>
+			<option value="Agatti Island">Agatti Island</option>
+			<option value="Aizawl">Aizawl</option>
+			<option value="Amritsar">Amritsar</option>
+			<option value="Agartala">Agartala</option>
+			<option value="Bagdogra">Bagdogra</option>
+			<option value="Chandigarh">Chandigarh</option>
+			<option value="Allahabad">Allahabad</option>
+			<option value="Mangalore">Mangalore</option>
+			<option value="Belgaum">Belgaum</option>
+			<option value="Kailashahar">Kailashahar</option>
+			<option value="Lilabari">Lilabari</option>
+			<option value="Jammu">Jammu</option>
+			<option value="Keshod">Keshod</option>
+			<option value="Leh">Leh</option>
+			<option value="Madurai">Madurai</option>
+			<option value="Khowai">Khowai</option>
+			<option value="Pathankot">Pathankot</option>
+			<option value="Kamalpur">Kamalpur</option>
+			<option value="Ranchi">Ranchi</option>
+			<option value="Silchar">Silchar</option>
+			<option value="Pasighat">Pasighat</option>
+			<option value="Aurangabad">Aurangabad</option>
+			<option value="Along">Along</option>
+			<option value="Jamshedpur">Jamshedpur</option>
+			<option value="Kandla">Kandla</option>
+			<option value="Port Blair">Port Blair</option>
+			<option value="Jaipur">Jaipur</option>
+			<option value="Jodhpur">Jodhpur</option>
+			<option value="Jabalpur">Jabalpur</option>
+			<option value="Jorhat">Jorhat</option>
+			<option value="Kanpur">Kanpur</option>
+			<option value="Lucknow">Lucknow</option>
+			<option value="Ludhiana">Ludhiana</option>
+			<option value="Chennai">Chennai</option>
+			<option value="Nagpur">Nagpur</option>
+			<option value="Nanded">Nanded</option>
+			<option value="Delhi">Delhi</option>
+			<option value="Patna">Patna</option>
+			<option value="Pune">Pune</option>
+			<option value="Raipur">Raipur</option>
+			<option value="Shirdi">Shirdi</option>
+			<option value="Shillong">Shillong</option>
+			<option value="Solapur">Solapur</option>
+			<option value="Srinagar">Srinagar</option>
+			<option value="Tirupati">Tirupati</option>
+			<option value="Thiruvananthapuram">Thiruvananthapuram</option>
+			<option value="Udaipur">Udaipur</option>
+			<option value="Vijayawada">Vijayawada</option>
+			<option value="Vijayawada">Vijayawada</option>
+			<option value="Varanasi">Varanasi</option>
+			<option value="Visakhapatnam">Visakhapatnam</option>
+		</select>
 
-            <label for="destination">Destination:</label>
-            <input
-                type="text"
-                id="destination"
-                name="destination"
-                required
-                autocomplete="off"
-            />
+		<label for="destination">Destination:</label>
+		<select
+			id="destination"
+			name="destination"
+			required
+		>
+			<option value="">Select a source</option>
+			<option value="Agatti Island">Agatti Island</option>
+			<option value="Aizawl">Aizawl</option>
+			<option value="Amritsar">Amritsar</option>
+			<option value="Agartala">Agartala</option>
+			<option value="Bagdogra">Bagdogra</option>
+			<option value="Chandigarh">Chandigarh</option>
+			<option value="Allahabad">Allahabad</option>
+			<option value="Mangalore">Mangalore</option>
+			<option value="Belgaum">Belgaum</option>
+			<option value="Kailashahar">Kailashahar</option>
+			<option value="Lilabari">Lilabari</option>
+			<option value="Jammu">Jammu</option>
+			<option value="Keshod">Keshod</option>
+			<option value="Leh">Leh</option>
+			<option value="Madurai">Madurai</option>
+			<option value="Khowai">Khowai</option>
+			<option value="Pathankot">Pathankot</option>
+			<option value="Kamalpur">Kamalpur</option>
+			<option value="Ranchi">Ranchi</option>
+			<option value="Silchar">Silchar</option>
+			<option value="Pasighat">Pasighat</option>
+			<option value="Aurangabad">Aurangabad</option>
+			<option value="Along">Along</option>
+			<option value="Jamshedpur">Jamshedpur</option>
+			<option value="Kandla">Kandla</option>
+			<option value="Port Blair">Port Blair</option>
+			<option value="Jaipur">Jaipur</option>
+			<option value="Jodhpur">Jodhpur</option>
+			<option value="Jabalpur">Jabalpur</option>
+			<option value="Jorhat">Jorhat</option>
+			<option value="Kanpur">Kanpur</option>
+			<option value="Lucknow">Lucknow</option>
+			<option value="Ludhiana">Ludhiana</option>
+			<option value="Chennai">Chennai</option>
+			<option value="Nagpur">Nagpur</option>
+			<option value="Nanded">Nanded</option>
+			<option value="Delhi">Delhi</option>
+			<option value="Patna">Patna</option>
+			<option value="Pune">Pune</option>
+			<option value="Raipur">Raipur</option>
+			<option value="Shirdi">Shirdi</option>
+			<option value="Shillong">Shillong</option>
+			<option value="Solapur">Solapur</option>
+			<option value="Srinagar">Srinagar</option>
+			<option value="Tirupati">Tirupati</option>
+			<option value="Thiruvananthapuram">Thiruvananthapuram</option>
+			<option value="Udaipur">Udaipur</option>
+			<option value="Vijayawada">Vijayawada</option>
+			<option value="Vijayawada">Vijayawada</option>
+			<option value="Varanasi">Varanasi</option>
+			<option value="Visakhapatnam">Visakhapatnam</option>
+		</select>
 
-            <input type="hidden" name="frontEnd" value="Y">
-            
-            <button type="submit">Find Flight Price</button>
-        </form>
-    </div>
+		<input
+			type="hidden"
+			name="frontEnd"
+			value="Y"
+		/>
 
-    <div>
-        <%  if(data!==null){ %>
-            <% data.forEach(ele=>{ %>
-                <div class="card" style="background-color:#FFC0CB;">
-                    <p><%= ele.name %>: <%= ele.price %></p>
-                </div>
-            <% }); %>
-        <% } %>
-    </div>
+		<button type="submit">Find Flight Price</button>
+	</form>
+</div>
+
+<div>
+	<% if(data!==null){ %> <% data.forEach(ele=>{ %>
+	<div
+		class="card"
+		style="background-color: #ffc0cb"
+	>
+		<p><%= ele.name %>: <%= ele.price %></p>
+	</div>
+	<% }); %> <% } %>
+</div>
 <%- include("partials/footer.ejs") -%>
