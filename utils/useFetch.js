@@ -1,4 +1,6 @@
 import axios from "axios";
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const useFetch = async (endPoint, query) => {
     console.log(query);
@@ -7,7 +9,7 @@ export const useFetch = async (endPoint, query) => {
         url: `https://flight-fare-search.p.rapidapi.com/v2/${endPoint}/`,
         params: { ...query},
         headers: {
-          'X-RapidAPI-Key': '2b8062ca79msh06cb5f66ee648e3p119adejsn537f7d76a65e',
+          'X-RapidAPI-Key': process.env.RAPID_API_KEY,
           'X-RapidAPI-Host': 'flight-fare-search.p.rapidapi.com'
         }
       };

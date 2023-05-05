@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use('/', main);
 
 // SERVER
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, () =>
 	console.log(`Server has started successfully at port : ${PORT}`)
 );

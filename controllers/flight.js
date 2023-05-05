@@ -27,20 +27,20 @@ export const getPrices = async (req, res) => {
 		});
 		if (data && data.results) {
 			const response = data.results.map((flight) => ({
-			  name: flight.flight_name,
-			  price: `${flight.totals.currency} ${flight.totals.total}`,
+				name: flight.flight_name,
+				price: `${flight.totals.currency} ${flight.totals.total}`,
 			}));
-			
+
 			if (req.body.hasOwnProperty('frontEnd')) {
-			  res.render('home', { data: response });
+				res.render('home', { data: response });
 			} else {
-			  res.status(200).json({ data: response });
+				res.status(200).json({ data: response });
 			}
-		  } else {
-			res.status(500).json({
-			  error: 'Unable to fetch flight data',
+		} else {
+			res.status(503).json({
+				error: 'server is currently unavailable',
 			});
-		  }
+		}
 	} catch (error) {
 		console.log(error);
 		res.status(500).json({
