@@ -27,7 +27,7 @@ export const getPrices = async (req, res) => {
 			data: tomorrowDate,
 			adult: 1,
 			type: 'economy',
-			currency: 'INR',
+			currency: 'USD',
 		});
 		if (data && data.results) {
 			const response = data.results.map((flight) => ({
