@@ -22,12 +22,9 @@ export const getPrices = async (req, res) => {
 	const tomorrowDate = tomorrow.toISOString().slice(0, 10);
 	try {
 		const data = await useFetch({
-			from: sourceIATA,
-			to: destinationIATA,
-			data: tomorrowDate,
-			adult: 1,
-			type: 'economy',
-			currency: 'USD',
+			source: sourceIATA,
+			destination: destinationIATA,
+			reqData: tomorrowDate,
 		});
 		if (data && data.results) {
 			const response = data.results.map((flight) => ({
@@ -42,7 +39,7 @@ export const getPrices = async (req, res) => {
 			}
 		} else {
 			res.status(503).json({
-				error: 'server is currently unavailable',
+				error: data.error,
 			});
 		}
 	} catch (error) {
