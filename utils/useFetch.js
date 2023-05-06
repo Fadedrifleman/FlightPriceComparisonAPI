@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const useFetch = async (source, destination, reqDate) => {
-	console.log(query);
 	const options = {
 		method: 'GET',
 		url: `https://flight-fare-search.p.rapidapi.com/v2/flight/`,
