@@ -16,11 +16,15 @@ export const getPrices = async (req, res) => {
 	const { source, destination } = req.body;
 	const sourceIATA = getAirportCode(source);
 	const destinationIATA = getAirportCode(destination);
+	const today = new Date();
+	const tomorrow = new Date(today);
+	tomorrow.setDate(tomorrow.getDate() + 1);
+	const tomorrowDate = tomorrow.toISOString().slice(0, 10);
 	try {
-		const data = await useFetch('flight', {
+		const data = await useFetch({
 			from: sourceIATA,
 			to: destinationIATA,
-			data: new Date().toISOString().slice(0, 10),
+			data: tomorrowDate,
 			adult: 1,
 			type: 'economy',
 			currency: 'INR',

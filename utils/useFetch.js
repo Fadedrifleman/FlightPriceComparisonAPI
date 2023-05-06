@@ -2,11 +2,11 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 dotenv.config();
 
-export const useFetch = async (endPoint, query) => {
+export const useFetch = async (query) => {
 	console.log(query);
 	const options = {
 		method: 'GET',
-		url: `https://flight-fare-search.p.rapidapi.com/v2/${endPoint}/`,
+		url: `https://flight-fare-search.p.rapidapi.com/v2/flight/`,
 		params: { ...query },
 		headers: {
 			'X-RapidAPI-Key': process.env.RAPID_API_KEY,
