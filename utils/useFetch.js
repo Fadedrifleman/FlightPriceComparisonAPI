@@ -2,7 +2,7 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 dotenv.config();
 
-export const useFetch = async ({source, destination, reqDate}) => {
+export const useFetch = async (source, destination, reqDate) => {
 	console.log(query);
 	const options = {
 		method: 'GET',

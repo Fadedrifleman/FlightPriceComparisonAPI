@@ -21,11 +21,7 @@ export const getPrices = async (req, res) => {
 	tomorrow.setDate(tomorrow.getDate() + 1);
 	const tomorrowDate = tomorrow.toISOString().slice(0, 10);
 	try {
-		const data = await useFetch({
-			source: sourceIATA,
-			destination: destinationIATA,
-			reqData: tomorrowDate,
-		});
+		const data = await useFetch(sourceIATA, destinationIATA, tomorrowDate);
 		if (data && data.results) {
 			const response = data.results.map((flight) => ({
 				name: flight.flight_name,
